@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+{% load static %} <!-- 表示要引入静态文件，需要放在html标签前面，避免无法通过验证 -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>教育部數位人文創新人才培育計畫</title>
+
+  <!-- favicon -->
+  <link href="{% static 'img-logo.png' %}" rel=icon>
+
+  <!-- web-fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
+
+  <!-- Bootstrap -->
+  <!--<link rel="stylesheet"  href="static/css/bootstrap.min.css" > -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+
+  <!-- Style CSS -->
+  <!--<link href="static/css/style.css" rel="stylesheet">-->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/teacher.css' %}">
+  <!--new-->
+  <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- 圖示字型 Font Awesome Icon Library 教學 https://www.wfublog.com/2016/01/font-awesome-cheat-sheet.html-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!---->
+  <style>
+    .bgpicture{
+      background-image:url({% static 'img-jumbotron-bg2.png'%});
+      height: 100vh;
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .hero {
+      height: 100vh;
+      width: 100%;
+      background-size: cover;
+      background-position: center center;
+      opacity:0.5; filter: alpha(opacity=60);
+      background-repeat: no-repeat; }
+      .dimback{
+        background:#696969; 
+      }
+    .position {
+      position: relative;
+      left: 30px;
+      width: 1140px;
+    }
+    /*課程難易度*/
+    .checked {
+      color: orange;
+    }
+    /*垂直線*/
+    blockquote {
+      color: #299;
+      border-left: 5px solid #3dd8dc;
+      padding-left: 1em; 
+    }
+    /*div table*/
+    .difference__p {
+      font-size: 18px;
+      line-height: 1.6em;
+      text-align: justify;
+      margin-bottom: 25px;
+      color: #232323;
+      text-transform:capitalize;
+    }
+    .difference__country {
+      font-size: 14px;
+      text-align: center;
+      color: #232323; }
+      @media screen and (max-width: 767px) {
+        .difference__country {
+          font-size: 12px; } }
+          .difference__compare {
+            margin: auto;
+            margin-top: 36px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center; }
+
+            .difference__one {
+              width: 100%;
+              color: #521908;
+              font-size: 32px;
+              letter-spacing: .4em;
+              -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+              border-bottom: 1px solid #521908;
+              text-align: center;
+              box-sizing: border-box;
+              padding-bottom: 10px;
+            }
+
+
+            .difference__two, .difference__three {
+              width: 100%;
+              height: 110px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center;
+              border-bottom: 1px solid #232323; 
+              border-right: 1px solid #232323;
+            }
+            .difference__two {
+              border-bottom: 1px solid #232323;
+              border-right: 1px solid #232323; 
+            }
+            .difference__title .difference__two, .difference__title .difference__three {
+              color: #210501;
+              background-color: #521908;
+            }
+            .difference__title .difference__p {
+              color: white;
+            }
+            .difference__compare .difference__p {
+              margin-bottom: 0;
+              text-align: center;
+              font-weight: 600;
+            }
+            .difference__four{
+             color: #210501;
+             width: 1002.61px;
+             height: 110px;
+             display: -webkit-box;
+             display: -ms-flexbox;
+             display: flex;
+             -webkit-box-orient: vertical;
+             -webkit-box-direction: normal;
+             -ms-flex-direction: column;
+             flex-direction: column;
+             -webkit-box-pack: center;
+             -ms-flex-pack: center;
+             justify-content: center;
+             border-bottom: 1px solid #232323; 
+             border-right: 1px solid #232323;
+           }
+           .difference__emply{
+            width: 100%;
+            height: 110px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+
+          }
+          .difference__title {
+            width: 15%;
+          }
+          .difference__content {
+            width: 42.5%;
+          }
+          /*小格資訊*/
+          .course-chapters-info .block {
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+            border: 1px solid #d3dee5;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            margin-left: 16px;
+          }
+
+          .center-flexbox, .course-card .cover.empty, .flexbox {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+          }
+          .course-chapters-info .block:first-child {
+            margin-left: 0;
+          }
+
+          @media (max-width: 991px){
+            .course-chapters-info .title {
+              letter-spacing: 2px;
+              font-size: 16px;
+              line-height: 28px;
+              font-weight: 500;
+              }}
+
+              .course-chapters-info .title {
+                -webkit-border-radius: 5px 5px 0 0;
+                -moz-border-radius: 5px 5px 0 0;
+                -ms-border-radius: 5px 5px 0 0;
+                border-radius: 5px 5px 0 0;
+                background: #990DFF;
+                letter-spacing: 1.8px;
+                font-size: 20px;
+                color: #fff;
+                line-height: 26px;
+                text-align: center;
+                padding: 15px 0;
+                font-weight: 600;
+              }
+              @media (max-width: 991px){
+                .course-chapters-info .count {
+                  padding: 12px 0;
+                  line-height: 12px;
+                  font-size: 16px;
+                  }}
+                  .course-chapters-info .count {
+                    -webkit-border-radius: 0 0 5px 5px;
+                    -moz-border-radius: 0 0 5px 5px;
+                    -ms-border-radius: 0 0 5px 5px;
+                    border-radius: 0 0 5px 5px;
+                    background: #fff;
+                    padding: 0px 0;
+                    font-weight: 600;
+                    text-align: center;
+                  }
+                  .course-chapters-info .count, .course-chapters-info .count span {
+                    font-size: 24px;
+                    line-height: 40px;
+                  }
+                  .course-chapters-info .block {
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    border-radius: 5px;
+                    box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+                    border: 1px solid #d3dee5;
+                    -webkit-flex: 1;
+                    -ms-flex: 1;
+                    flex: 1;
+                    margin-left: 16px;
+                  }  
+                  /*章節*/
+                  .chip {
+                    display: inline-block;
+                    padding: 0 15px 23px ;
+                    margin: 12px;
+                    height: 50px;
+                    width: 523px;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 50px; /*文字水平置中*/
+                    border-radius: 25px;
+                    background-color: #f1f1f1;
+                  }
+
+                  .chip img {
+                    float: left;
+                    margin: -29px -12px 5px -35px; /*上右下左*/
+                    height: 100px;
+                    width: 100px;
+                    border-radius: 80%;
+                  }
+                  /*參考網站-手風琴*/
+                  .accordion {
+                    font-family: 微軟正黑體 !important;
+                    background-color: #dd3;
+                    color: #444;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-weight: 600 !important;
+                    font-size: 20px;
+                    transition: 0.4s;
+
+
+                  }
+
+                  .active_acordion, .accordion:hover {
+                    background-color: #cdd; 
+                  }
+
+                  .panel {
+                    padding: 0 18px;
+                    display: none;
+                    background-color: white;
+                    overflow: hidden;
+                    font-weight: 400;
+                    text-transform:capitalize;
+                  }
+
+                  .panelcontent {
+                    padding: 0 0px;
+                    display: none;
+                    background-color: #FFFFFF;
+                    overflow: hidden;
+                    font-weight: 400;
+                    text-transform:capitalize;
+                    height: auto !important;
+                  }
+                  /*垂直製表符-放學生作品的*/
+                  /* 選單 */
+                  .tab {
+                    float: left;
+                    border: 1px solid #ccc; /*邊框*/
+                    background-color: #40E0D0;
+                    /*background-color: #B1D5C2;*/
+                    width: 25%;
+                    height: 600px;
+                  }
+
+                  /* Style the buttons inside the tab */
+                  .tab button {
+                    display: block;
+                    background-color: inherit;
+                    color: black;
+                    padding: 22px 16px;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    font-size: 17px;
+                  }
+
+                  /* 滑過按鈕 */
+                  .tab button:hover {
+                    background-color: #FFFFE0;
+                  }
+
+                  /* Create an active/current "tab button" class */
+                  /* 按下按鈕 */
+                  .tab button.activebtn {
+                    /*background-color: #FFFACD;*/
+                  }
+
+                  /* 內容 */
+                  .tabcontent {
+                    float: left;
+                    padding: 0px 0px;
+                    border: 1px solid #ccc;
+                    width: 75%;
+                    border-left: none;
+                    height: 600px;
+                  }
+                  /*teacher-card*/
+                  .card {
+                    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+                    max-width: 450px;
+                    max-height: 800px;
+                    margin: -8px;
+                    text-align: center;
+                    font-family: 微軟正黑體;
+                  }
+
+                  .title {
+                    color: grey;
+                    font-size: 18px;
+                  }
+                  /*照片*/
+                  .numbertext img {
+                    vertical-align: middle;
+
+
+                  }
+
+                  /* Position the image container (needed to position the left and right arrows) */
+                  .container {
+                    position: relative;
+                  }
+
+                  /* Hide the images by default */
+                  .mySlides {
+                    display: none;
+                  }
+
+                  /* Add a pointer when hovering over the thumbnail images */
+                  .cursor {
+                    cursor: pointer;
+                  }
+
+                  /* Next & previous buttons */
+                  .prev,
+                  .next {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 40%;
+                    width: auto;
+                    padding: 16px;
+                    margin-top: -50px;
+                    color: white;
+                    font-weight: bold;
+                    font-size: 20px;
+                    border-radius: 0 3px 3px 0;
+                    user-select: none;
+                    -webkit-user-select: none;
+                  }
+
+                  /* Position the "next button" to the right */
+                  .next {
+                    right: 0;
+                    border-radius: 3px 0 0 3px;
+                  }
+
+                  /* On hover, add a black background color with a little bit see-through */
+                  .prev:hover,
+                  .next:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                  }
+
+                  /* Number text (1/3 etc) */
+                  .numbertext {
+                    color: #f2f2f2;
+                    font-size: 12px;
+                    padding: 8px 12px;
+                    position: absolute;
+                    top: 0;
+                  }
+
+                  /* Container for image text */
+                  .caption-container {
+                    text-align: center;
+                    background-color: #222;
+                    padding: 2px 16px;
+                    color: white;
+                    margin: 0 0 0px;
+
+                  }
+
+                  .rowshow:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                  }
+
+                  /* Six columns side by side */
+                  .columnshow {
+                    float: left;
+                    width: 14.28%;
+                  }
+
+                  /* Add a transparency effect for thumnbail images */
+                  .demo {
+                    opacity: 0.6;
+                  }
+
+                  .activeshow,
+                  .demo:hover {
+                    opacity: 1;
+                  }
+
+                </style>
+                <!--./style-->
+
+
+                <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+                <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar">
+  
+  <div class="bgpicture">
+    <header class="header">
+      
+      <!-- Navigation -->
+      <nav class="navbar main-menu" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!--放Logo-->
+            <a class="navbar-brand page-scroll" href="#page-top"><img src="{% static 'img-nkust-logo.png' %}" width="220" height="40" alt=""></a>
+          </div>
+          
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right navbar-main-collapse " style="font-family:微軟正黑體;">
+            <ul class="nav navbar-nav">
+              <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+              <li class="hidden"><a href="#page-top"></a></li>
+              <li><a class="page-scroll" href="#page-top">首頁</a></li>
+              <!--<li><a class="page-scroll" style="font-family:微軟正黑體;" href="#section-news">最新消息</a></li>-->
+              <li><a class="page-scroll" href="#section-intro">課程介紹</a></li>
+              <li><a class="page-scroll" href="#section-teacher">師資陣容</a></li>
+              <li><a class="page-scroll" href="#section-works">學生作品</a></li>
+              <li><a class="page-scroll" href="#section-photo">照片區</a></li>
+              <li><a  href="http://163.18.60.224/data/">ESP語料庫相關資料</a></li>
+              <!--<li><a class="page-scroll" style="font-family:微軟正黑體;">登入管理</a></li>-->
+            </ul>
+          </div>
+          
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+      </nav>
+      
+      <!-- .nav -->
+      
+    </header>
+    
+    <div class="jumbotron text-center">
+      <div class="content">
+        <div class="event-date" style="font-family: 微軟正黑體;">國立高雄科技大學/應用英語系</div>
+        <h1 style="font-family: 微軟正黑體;">教育部數位人文創新人才培育計畫</h1>
+        <p class="lead"; style="font-family: 微軟正黑體;"></p>
+        <!--<button type="button" class="btn btn-default btn-lg">sign in</button>-->
+      </div>
+    </div>
+    <!-- .Jumbotron-->
+
+  </div>
+
+    
+
+    <!--課程介紹-->
+    <section id="section-intro" class="section-wrapper about-event">
+      <div class="container" style="font-family: 微軟正黑體;" >
+        <div class="row">
+          <div class="section-title">
+            <h1 align="center">課程介紹</h1>
+
+          </div>
+          <div class="container marg-t-45 ">
+            <div class="container custom-container-width">
+              <div class="col">
+
+                <ul class="nav nav-tabs" style="font-size:20px">
+                  <li class="active"><a data-toggle="tab" href="#home" >課程大綱</a></li>
+                  <li><a data-toggle="tab" href="#menu1" class="inline-block" >課程概述</a></li>
+                  <li><a data-toggle="tab" href="#menu2" >章節主題</a></li>
+                  <li><a data-toggle="tab" href="#menu3" >參考網站</a></li>
+                </ul>
+
+              </div>
+            </div>
+
+            <div class="tab-content navbar position " style="font-size:18px;" >
+              <div id="home" class="tab-pane fade in active">
+                <blockquote> 
+                  <h3>語料庫理論與實務</h3> 
+                  <p>Corpus: Theory and Practice</p>
+                </blockquote>
+                <p style="display:inline; ">課程階層 : </p>
+                <span class="fa fa-book checked"></span>
+                <span class="fa fa-book checked"></span>
+                <span class="fa fa-book checked"></span>
+                <span class="fa fa-book"></span>
+                <span class="fa fa-book">&nbsp;&nbsp;基礎</span>
+                <!--div表格-->
+                <div class="difference__compare">
+                  <!--第1欄放標題-->
+                  <div class="difference__title">
+                    <div class="difference__one"></div>
+                    <div class="difference__two">
+                      <p class="difference__p">開課<br>學期</p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">學分數<br></p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">課程<br>領域</p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">相關<br>課程</p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">應用數位工具<br>/技術</p>
+                    </div>
+                  </div>
+                  <!--第2欄放content-->
+                  <div class="difference__content">
+                    <div class="difference__one"></div>
+                    <div class="difference__two">
+                      <p class="difference__p">110-1</p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">3</p>
+                      <!--p style="font-size: 16px" class="difference__p">杏仁堅果香<br>柑橘酸甜感<br>咖啡冰糖甜香</p>-->
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">人文類-語言</p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">文學翻譯入門、政經筆譯、科技翻譯</p>
+                    </div>
+                    <div class="difference__four">
+                      <p class="difference__p">Voyant tools、Python NLTK<br>spaCy、wordcloud<br>Gensim、textrank4zh、cnsenti</p>
+                    </div>
+                  </div>
+                  <!--第三欄放標題-->
+                  <div class="difference__title">
+                    <div class="difference__one"></div>
+                    <div class="difference__two">
+                      <p class="difference__p">授課<br>對象</p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">先備<br>課程</p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">延伸<br>課程</p>
+                    </div>
+                    <div class="difference__three">
+                      <p class="difference__p">修課<br>條件</p>
+                    </div>
+                    <div class="difference__emply"></div>
+
+
+                  </div>
+                  <!--第四欄放content-->
+                  <div class="difference__content">
+                    <div class="difference__one"></div>
+                    <div class="difference__two">
+                      <p class="difference__p">應用英語系大學部學生</p>
+                    </div>
+                    <div class="difference__three">
+                     <p class="difference__p">程式設計與語言應用、自然語言處理入門</p>
+                   </div>
+                   <div class="difference__three">
+                     <p class="difference__p">機器輔助翻譯</p>
+                   </div>
+                   <div class="difference__three">
+                    <p class="difference__p">修習過程式語言尤佳</p>
+                  </div>
+                  <div class="difference__emply"></div>
+                 </div><!--./第四欄content-->
+               </div>
+               <!--./div表格-->
+
+               <p style="color: #0033D8 ">#平行語料庫、#文本探勘、#副文本分析、#翻譯實作</p>                                
+             </div>
+
+             <div id="menu1" class="tab-pane fade">
+              <!---->
+              <div class="row">
+                <div class="course-chapters-info flexbox"> 
+                  <div class="block"> 
+                    <p class="title">修課條件</p> 
+                    <p class="count"><br>修習過程式語言尤佳</p> 
+                  </div> 
+                  <div class="block"> 
+                    <p class="title"> 授課方式 </p> 
+                    <p class="count"> 問題導向學習<br>專題導向學習<br>同儕教學法<br>上機實作</p> 
+                  </div> 
+                  <div class="block"> 
+                    <p class="title"> 成績評量方式 </p> 
+                    <p class="count"> 
+                      40%出席與課堂練習<br>
+                      30%期中考<br>
+                      30%期末考
+                    </p> 
+                  </div> 
+
+                </div>
+                <br>
+              </div>
+              <!--./-->
+              <blockquote> <h3>課程說明</h3> </blockquote>
+              <p>本課程旨在教授學生自建翻譯實務所需之雙語平行語料庫,學習語料蒐
+                集與處理,運用語料對應工具自建雙語語料檢索,並使用遠讀分析工具
+                進行翻譯文本語體特徵與譯者風格比較分析。此外,課程中另將介紹文
+                本探勘技術,主要應用在譯本的內/外部副文本之間之考察,文本探勘任
+                務包括:命名實體辨識、主題建模、關鍵字抽取、文本摘要、情感分
+                析,學生譯者藉由觀察語料的不同面向與副文本探勘結果,進行重譯專
+                題的設計與實作,專題內容包括:副文本分析結果、撰寫譯序並闡述重
+                譯理由、原文文本風格分析,以及說明翻譯實作成品與已出版譯本翻譯
+                風格的差異,讓學生了解如何針對譯者需求自建語料庫以及進行語料檢
+                索與風格分析,並應用文本探勘分析結果於專業翻譯實作。</p>
+              <blockquote> <h3>教學目標</h3> </blockquote>
+              <p>本課程培育學生具備處理自然語言為形式資料的能力,學習如何自建語
+                料庫且運用文本探勘技術進行命名實體辨識、主題建模、關鍵字抽取、
+                文本摘要、情感分析等任務,提升語言科系學生自然語言資料處理分析
+                與應用的能力,瞭解人工智慧如何應用於翻譯實務。</p>
+            </div>
+            <!--章節主題-->
+            <div id="menu2" class="tab-pane fade">
+              <p>主授老師以粗體標示,非主授教師則協助實作分析、討論與解惑。</p>
+              <div class="row">
+                <div class="col-md-6 col-sm-4">
+                  
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo1" style="cursor: pointer;"> 
+                    <img src="{% static "img/img_ch1.png" %}" width="96" height="96">
+                    課程介紹、學生分組、選定重譯作品
+                  </div>
+                  <div id="demo1" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>吳怡萍</b>、<b>馮蕙嫻</b>、<b>李俊宏</b></p>
+                    <p style="text-indent:30px">使用工具:無</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo2" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch2.png" %}" width="96" height="96">
+                    語料庫翻譯學與副文本分析介紹
+                  </div>
+                  <div id="demo2" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>吳怡萍</b>、<b>馮蕙嫻</b>、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:無</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo3" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch3.png" %}" width="96" height="96">
+                    自建語料庫方法介紹
+                  </div>
+                  <div id="demo3" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>馮蕙嫻</b>、<b>吳怡萍</b>、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:無</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo4" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch4.png" %}" width="96" height="96">
+                    語料分析方法介紹
+                  </div>
+                  <div id="demo4" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>馮蕙嫻</b>、<b>吳怡萍</b>、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:Voyant tools</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo5" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch5.png" %}" width="96" height="96">
+                    自建語料庫檢索(1)
+                    原文語體特徵探索
+                  </div>
+                  <div id="demo5" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>馮蕙嫻</b>、<b>吳怡萍</b>、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:Voyant tools</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo6" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch6.png" %}" width="96" height="96">
+                    自建語料庫檢索(2)
+                    譯文語體特徵探索
+                  </div>
+                  <div id="demo6" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>馮蕙嫻</b>、<b>吳怡萍</b>、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:Voyant tools</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo7" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch7.png" %}" width="96" height="96">
+                    【校外學者】自然語言處理於語料庫分析之應用
+                  </div>
+                  <div id="demo7" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>阮家慶</b>、吳怡萍、馮蕙嫻、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:Python NLTK</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo8" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch8.png" %}" width="96" height="96">
+                    文本探勘概念與分析技術介紹
+                  </div>
+                  <div id="demo8" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>李俊宏</b>、馮蕙嫻、吳怡萍</p>
+                    <p style="text-indent:30px">使用工具:無</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo9" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch9.png" %}" width="96" height="96">
+                    (期中考)專題實作報告:語料庫建置與分析
+                  </div>
+                  <div id="demo9" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>吳怡萍</b>、<b>馮蕙嫻</b>、<b>李俊宏</b></p>
+                    <p style="text-indent:30px">使用工具:Voyant tools、Python NLTK</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-4">
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo10" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch10.png" %}" width="96" height="96">
+                    文本探勘實作(一)
+                  </div>
+                  <div id="demo10" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>李俊宏</b>、吳怡萍、馮蕙嫻</p>
+                    <div style="text-indent:30px">
+                      <dl>
+                        <dt>資料抽取:命名實體辨識</dt>
+                        <dd>- 使用工具:spaCy</dd>
+                        <dt>文字雲</dt>
+                        <dd>- 使用工具:Word cloud</dd>
+                        <dt>主題建模</dt>
+                        <dd>- 使用工具:Gensim</dd>
+                      </dl>
+                      
+                    </div>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo11" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch11.png" %}" width="96" height="96">
+                    文本探勘實作(二)
+                  </div>
+                  <div id="demo11" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>李俊宏</b>、吳怡萍、馮蕙嫻</p>
+                    <div style="text-indent:30px">
+                      <dl>
+                        <dt>關鍵字題取</dt>
+                        <dd>- 使用工具:textrank4zh</dd>
+                        <dt>文本摘要</dt>
+                        <dd>- 使用工具:textrank4zh</dd>
+                        <dt>情感分析</dt>
+                        <dd>- 使用工具:cnsenti</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo12" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch12.png" %}" width="96" height="96">
+                    重譯實作專題規劃
+                  </div>
+                  <div id="demo12" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>吳怡萍</b>、<b>馮蕙嫻</b>、<b>李俊宏</b></p>
+                    <p style="text-indent:30px">使用工具:Voyant tools、Python NLTK、文本探勘工具</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo13" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch13.png" %}" width="96" height="96">
+                    【業師】打造翻譯暢銷書:從出版提案到行銷策略
+                  </div>
+                  <div id="demo13" class="collapse">
+                    <p style="text-indent:30px;color:red">演講主題為暫定</p>
+                    <p style="text-indent:30px">授課教師:<b>陳希林(遠流總編)</b>、吳怡萍、馮蕙嫻、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:無</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo14" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch14.png" %}" width="96" height="96">
+                    【校外學者】利用文字探勘寫出好文案
+                  </div>
+                  <div id="demo14" class="collapse">
+                    <p style="text-indent:30px"><b>「文本探勘應用」工作坊(一)</b></p>
+                    <p style="text-indent:30px">授課教師:<b>阮家慶</b>、馮蕙嫻、吳怡萍、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:Python NLTK</p>
+                  </div>
+                  
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo15" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch15.png" %}" width="96" height="96">
+                    【校外學者】文字探勘與重譯
+                  </div>
+                  <div id="demo15" class="collapse">
+                    <p style="text-indent:30px"><b>「文本探勘應用」工作坊(二)</b></p>
+                    <p style="text-indent:30px">授課教師:<b>阮家慶</b>、馮蕙嫻、吳怡萍、李俊宏</p>
+                    <p style="text-indent:30px">使用工具:Python NLTK</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo16" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch16.png" %}" width="96" height="96">
+                    重譯實作專題輔導
+                  </div>
+                  <div id="demo16" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>吳怡萍</b>、<b>馮蕙嫻</b>、<b>李俊宏</b></p>
+                    <p style="text-indent:30px">使用工具:Voyant tools、 Python NLTK、文本探勘工具</p>
+                  </div>
+                  
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo17" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch17.png" %}" width="96" height="96">
+                    重譯實作專題輔導
+                  </div>
+                  <div id="demo17" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>吳怡萍</b>、<b>馮蕙嫻</b>、<b>李俊宏</b></p>
+                    <p style="text-indent:30px">使用工具:Voyant tools、 Python NLTK、文本探勘工具</p>
+                  </div>
+
+                  <div class="chip" type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo18" style="cursor: pointer;">
+                    <img src="{% static "img/img_ch18.png" %}" width="96" height="96">
+                    (期末考)專題成果發表【業師參與講評】
+                  </div>
+                  <div id="demo18" class="collapse">
+                    <p style="text-indent:30px">授課教師:<b>陳希林</b>、<b>吳怡萍</b>、<b>馮蕙嫻</b>、<b>李俊宏</b></p>
+                    <p style="text-indent:30px">使用工具:Voyant tools、 Python NLTK、文本探勘工具</p>
+                  </div>
+                </div>
+              </div><!--./row-->
+            </div><!--./章節主題-->
+
+            <!--參考網站-->
+            <div id="menu3" class="tab-pane fade">
+              <button class="accordion">主要閱讀材料</button>
+              <div class="panel">
+                <li>Batchelor, K. (2018). Translation and paratext. Routledge.</li>
+                <li>Li, D. (2017). Translator style. A corpus-based approach. In M. Ji, L. Hareide, D. Li &
+                  M. Oaks (Eds.), Corpus methodologies explained: An empirical approach to translation
+                  studies. (pp. 103-136). Routledge.</li>
+                <li>Zanettin, F. (2012). Translation-driven corpora: Corpus resources for descriptive and
+                  applied translation studies. St. Jerome.</li>
+                <li>許健將,劉福蒝(2020),《文本探勘:小技術大應用》,全華圖書。</li>
+              </div>
+              <button class="accordion">延伸閱讀材料</button>
+              <div class="panel">
+                <li><a href="https://www.openedu.tw/course.jsp?id=866">文本探勘:小技術大應用(中華開放教育平台)</a></li>
+
+              </div>
+              <button class="accordion">參考網站</button>
+              <div class="panel">
+                <li><a href="http://media.people.com.cn/BIG5/n1/2017/1225/c40628-29727492.html">關於出版行業大數據應用的幾點思考</a></li>
+                <li><a href="https://www.upgrad.com/blog/what-is-text-mining-techniques-and-applications/">What is Text Mining: Techniques and Applications</a></li>
+                <li><a href="https://monkeylearn.com/text-mining/">What is Text Mining: A Beginner’s Guide</a></li>
+
+              </div>
+            </div><!--./row-->
+          </div><!--./參考網站-->
+
+
+        </div>
+      </div>
+    </section>
+    <!-- .about-event -->
+                  
+    <!--師資陣容-->
+    <section id="section-teacher" class="section-wrapper team gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title">
+              <h1 style="font-family: 微軟正黑體;">師資陣容</h1>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-section">
+          <div class="inner-width">
+            <h1>Teacher introduction            </h1>
+            <div class="testimonial-pics">
+              
+                
+                <img src="{% static 'img/teacher01.jpg'%}" alt="test-1" class="active">
+                
+                <img src="{% static 'img/teacher02.jpg'%}" alt="test-2">
+                
+                <img src="{% static 'img/teacher03.jpg'%}" alt="test-3">
+                <img src="{% static 'img/teacher04.jpg'%}" alt="test-4">
+              
+            </div>
+    
+            <div class="testimonial-contents">
+              <div class="testimonial active" id="test-1">
+                <p class="title">國立高雄科技大學 教授</p>
+                <p><b>主要經歷</b></p>
+                <p>國立高雄科技大學應用英語系 教授<p>
+                <p>國立高雄第一科技大學應用英語系 副教授</p>
+                <p>國立高雄第一科技大學應用英語系 助理教授</p>
+              </div>
+    
+              <div class="testimonial" id="test-2">
+                <p class="title">國立高雄科技大學  助理教授</p>
+                <p><b>主要經歷</b></p>
+                <p>國立高雄科技大學應用英語系 助理教授<p>
+                <p>國立高雄第一科技大學語言教學中心專案助理教授</p>
+                <p>美國愛荷華州立大學博士後研究員</p>
+              </div>
+    
+              <div class="testimonial" id="test-3">
+                <p class="title">國立彰化
+                師範大學英語系專案助理教授</p>
+                <p><b>主要經歷</b></p>
+                <p>國立高雄科技大學應用英語系兼任助理教授</p>
+                <p>國立高雄科技大學語言教學中心兼任助理教授</p>
+                <p>南華大學語文教學中心兼任助理教授<p>
+              </div>
+    
+              <div class="testimonial" id="test-4">
+                <p class="title">國立高雄科技大學  教授</p>
+                <p><b>主要經歷</b></p>
+                <p>國立高雄科技大學電機工程系 教授兼電機與資訊學院副院長</p>
+                <p>國立高雄應用科技大學電機工程系 副教授</p>
+                <p>中央研究院資訊科學研究所 訪問學者<p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+        <!--學生作品-->
+         <section id="section-works" class="section-wrapper about-event">
+          <div class="container" style="font-family: 微軟正黑體;">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="section-title">
+                  <h1>學生作品</h1>
+                </div>
+              </div>
+            </div>
+            <ul class="nav nav-tabs">
+              {% comment %} <li class="active"><a data-toggle="tab" href="#home">Home</a></li> {% endcomment %}
+              <li class="active"><a data-toggle="tab" href="#m1">第一組</a></li>
+              <li><a data-toggle="tab" href="#m2">第六組</a></li>
+              <li><a data-toggle="tab" href="#m3">第七組</a></li>
+            </ul>
+          
+            <div class="tab-content">
+              {% comment %} <div id="home" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <p>sad</p>
+              </div> {% endcomment %}
+
+              <div id="m1" class="tab-pane fade in active">
+                <ul class="nav nav-pills">
+                  <li class="active"><a data-toggle="pill" href="#m1-home2">期中</a></li>
+                  <li><a data-toggle="pill" href="#m1-1">期末</a></li>
+                </ul>
+                
+                <div class="tab-content">
+                  <div id="m1-home2" class="tab-pane fade in active">
+                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7hjwkpubdc" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                    <iframe width="942" height="530" src="https://www.youtube.com/embed/kUyD8B0LSbI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <div id="m1-1" class="tab-pane fade">
+                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7xjlzxde47" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                    <iframe width="942" height="530" src="https://www.youtube.com/embed/saS1-tTxYPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <div id="m2" class="tab-pane fade">
+                <ul class="nav nav-pills">
+                  <li class="active"><a data-toggle="pill" href="#m2-home2">期中</a></li>
+                  <li><a data-toggle="pill" href="#m2-1">期末</a></li>
+                </ul>
+                
+                <div class="tab-content">
+                  <div id="m2-home2" class="tab-pane fade in active">
+                    
+                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=19s7qqspma" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                    <iframe width="942" height="530" src="https://www.youtube.com/embed/DZ7_o4hwmpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <div id="m2-1" class="tab-pane fade">
+                    
+                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=zc5euct6rh" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                    <iframe width="942" height="530" src="https://www.youtube.com/embed/MpSpii_Y3_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+
+              <div id="m3" class="tab-pane fade">
+                <ul class="nav nav-pills">
+                  <li class="active"><a data-toggle="pill" href="#m2-home2">期末</a></li>
+                  
+                </ul>
+                
+                <div class="tab-content">
+                  <div id="m2-home2" class="tab-pane fade in active">
+                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=xplwpnco7k" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                    <iframe width="942" height="530" src="https://www.youtube.com/embed/MrKxnTqEY1M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <!-- /.container -->
+        </section>
+
+
+
+            <!--照片區-->
+            <section id="section-photo" class="section-wrapper client-logo gray-bg">
+              <div class="container" style="font-family: 微軟正黑體;">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="section-title">
+                      <h1>照片區</h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <!--slideshow-->
+                  <div class="container">
+                    {%for p in pictures%}
+                    <div class="mySlides">
+                      <div class="numbertext">1 / {{forloop.counter}}</div>
+                      <img src="{{p.image.url}}" style="width:100%;height:600px;object-fit: cover;" >
+                    </div>
+                    {%endfor%}
+
+
+                
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                <div class="caption-container">
+                  <p id="caption"></p>
+                </div>
+
+                <div class="rowshow">
+                  {%for p in pictures%}
+                  <div class="columnshow">
+                    <img class="demo cursor" src="{{p.image.url}}" style="width:100%;height:100px;object-fit: cover;" onclick="currentSlide({{forloop.counter}})" alt="期中報告">
+                  </div>
+                  {%endfor%}
+                  <!--<div class="columnshow">
+                    <img class="demo cursor" src="{% static "img/img_photo22.jpg" %}" style="width:100%" onclick="currentSlide(22)" alt="期末報告">
+                  </div>
+                  <div class="columnshow">
+                    <img class="demo cursor" src="{% static "img/img_photo23.jpg" %}" style="width:100%" onclick="currentSlide(23)" alt="期末報告">
+                  </div>
+                  <div class="columnshow">
+                    <img class="demo cursor" src="{% static "img/img_photo24.jpg" %}" style="width:100%" onclick="currentSlide(24)" alt="期末報告">
+                  </div>-->
+                </div>
+              </div>
+
+              <!--./slideshow-->
+            </div>
+          </div>
+          <!--end of .container -->
+        </section>
+        <!-- .client-logo -->
+
+        <!--頁尾-->
+        <footer class="footer">
+          <div class="copyright-section">
+            <div class="container">
+              <div class="col-md-12">
+                <div class="copytext text-center">
+                  &copy; 2020國立高雄科技大學 NKUST
+                </div>  
+              </div>
+            </div>
+            <!-- .container -->
+          </div>
+          <!-- .copyright-section -->
+        </footer>
+        <!-- .footer -->
+
+      </div>
+      <!-- #main-wrapper -->
+
+      
+
+      <!-- jquery -->
+      <!--<script src="static/js/jquery-2.1.4.min.js"></script>-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+      <!-- Bootstrap -->
+      <!-- <script src="static/js/bootstrap.min.js"></script>  -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+      <!-- Plugin JavaScript -->
+      <!--<script src="static/js/jquery.easing.min.js"></script>-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>  <!--page-scroll effect-->
+      <!--.手風琴 ver.2-->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+      <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+      <!--要用在打開 <script src="https://maps.googleapis.com/maps/api/js"></script>-->
+
+      <!--<script src="js/one-page-nav.js"></script>-->
+      <!-- <script src="static/js/scripts.js"></script> -->
+      <script src="{% static 'js/scripts.js' %}"></script>
+        <!--accordion ver.2-->
+        <script>
+      $( function() {
+        $( "#tab" ).accordion();
+      } );
+       </script>
+
+
+      <!--參考網站-手風琴-->
+      <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active_acordion");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+              panel.style.display = "none";
+            } else {
+              panel.style.display = "block";
+            }
+          });
+        }
+      </script>
+      <!--垂直製表符-->
+      <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" activebtn", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " activebtn";
+        }
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<!--照片區 slideshow-->
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" activeshow", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " activeshow";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+    </script>
+    
+    <script type="text/javascript">//教師介紹的部分
+      $('.testimonial-pics img').click(function(){
+        $(".testimonial-pics img").removeClass("active");
+        $(this).addClass("active");
+
+        $(".testimonial").removeClass("active");
+        $("#"+$(this).attr("alt")).addClass("active");
+      });
+    </script>
+  </body>
+  </html>
