@@ -15,6 +15,6 @@ class Book(models.Model):
         super().delete(*args, **kwargs)
 
 class picture(models.Model):
-    image = models.ImageField(upload_to='picture/', blank=False, null=False) 
-    
+    image = models.CharField(max_length=200)
+    information = models.CharField(max_length=200)
 # Create your models here.
