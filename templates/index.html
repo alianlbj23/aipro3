@@ -1105,7 +1105,7 @@
                 <div class="rowshow">
                   {%for p in pictures%}
                   <div class="columnshow">
-                    <img class="demo cursor" src="{{p.image.url}}" style="width:100%;height:100px;object-fit: cover;" onclick="currentSlide({{forloop.counter}})" alt="期中報告">
+                    <img class="demo cursor" src="{{p.image.url}}" style="width:100%;height:100px;object-fit: cover;" onclick="currentSlide({{forloop.counter}})" alt="{{p.image.url}}">
                   </div>
                   {%endfor%}
                   <!--<div class="columnshow">
