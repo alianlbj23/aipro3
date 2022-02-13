@@ -22,7 +22,7 @@
   <!-- Style CSS -->
   <!--<link href="static/css/style.css" rel="stylesheet">-->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  <link rel="stylesheet" href="{% static 'css/teacher.css' %}">
+  <link rel="stylesheet" href="{% static 'css/Carousel.css' %}">
   <!--new-->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -511,7 +511,7 @@
               <li><a class="page-scroll" href="#section-teacher">師資陣容</a></li>
               <li><a class="page-scroll" href="#section-works">學生作品</a></li>
               <li><a class="page-scroll" href="#section-photo">照片區</a></li>
-              <li><a  href="http://163.18.60.224/data/">ESP語料庫相關資料</a></li>
+              <li><a  href="#">文本探勘工具</a></li>
               <!--<li><a class="page-scroll" style="font-family:微軟正黑體;">登入管理</a></li>-->
             </ul>
           </div>
@@ -700,7 +700,6 @@
             </div>
             <!--章節主題-->
             <div id="menu2" class="tab-pane fade">
-              <p>主授老師以粗體標示,非主授教師則協助實作分析、討論與解惑。</p>
               <div class="row">
                 <div class="col-md-6 col-sm-4">
                   
@@ -937,63 +936,80 @@
             </div>
           </div>
         </div>
-        <div class="testimonial-section">
-          <div class="inner-width">
-            <h1>Teacher introduction            </h1>
-            <div class="testimonial-pics">
-              
-                
-                <img src="{% static 'img/teacher01.jpg'%}" alt="test-1" class="active">
-                
-                <img src="{% static 'img/teacher02.jpg'%}" alt="test-2">
-                
-                <img src="{% static 'img/teacher03.jpg'%}" alt="test-3">
-                <img src="{% static 'img/teacher04.jpg'%}" alt="test-4">
-              
-            </div>
-    
-            <div class="testimonial-contents">
-              <div class="testimonial active" id="test-1">
-                <p class="title">國立高雄科技大學 教授</p>
-                <p><b>主要經歷</b></p>
-                <p>國立高雄科技大學應用英語系 教授<p>
-                <p>國立高雄第一科技大學應用英語系 副教授</p>
-                <p>國立高雄第一科技大學應用英語系 助理教授</p>
-              </div>
-    
-              <div class="testimonial" id="test-2">
-                <p class="title">國立高雄科技大學  助理教授</p>
-                <p><b>主要經歷</b></p>
-                <p>國立高雄科技大學應用英語系 助理教授<p>
-                <p>國立高雄第一科技大學語言教學中心專案助理教授</p>
-                <p>美國愛荷華州立大學博士後研究員</p>
-              </div>
-    
-              <div class="testimonial" id="test-3">
-                <p class="title">國立彰化
-                師範大學英語系專案助理教授</p>
-                <p><b>主要經歷</b></p>
-                <p>國立高雄科技大學應用英語系兼任助理教授</p>
-                <p>國立高雄科技大學語言教學中心兼任助理教授</p>
-                <p>南華大學語文教學中心兼任助理教授<p>
-              </div>
-    
-              <div class="testimonial" id="test-4">
-                <p class="title">國立高雄科技大學  教授</p>
-                <p><b>主要經歷</b></p>
-                <p>國立高雄科技大學電機工程系 教授兼電機與資訊學院副院長</p>
-                <p>國立高雄應用科技大學電機工程系 副教授</p>
-                <p>中央研究院資訊科學研究所 訪問學者<p>
-              </div>
+        <div class="row">
+          <div class="col-sm-5 col-md-3">
+            <!--<a href="#"><img src="img/img-teacher-2.png" class="img-responsive" alt="Image"></a>-->
+            <div class="card">
+              <p style="background-color: #ffcc88;  font-size: 30px;">&nbsp;</p>
+              <img src="{% static "img/teacher01.jpg" %}" alt="吳怡萍教授" style="width:67%;height:300px;object-fit:cover">
+              <p><h1>吳怡萍</h1></p>
+              <p class="title">國立高雄科技大學 <br>教授</p>
+              <p><b>主要經歷</b></p>
+              <p>國立高雄科技大學應用英語系 <br>教授<p>
+                <p>國立高雄第一科技大學應用英語系 <br>副教授</p>
+                <p>國立高雄第一科技大學應用英語系 <br>助理教授</p>
+                <p style="background-color: #ffcc88;  font-size: 30px;">&nbsp;</p>
             </div>
           </div>
+
+          <div class="col-sm-5 col-md-3">
+            <!--<a href="#"><img src="img/img-teacher-2.png" class="img-responsive" alt="Image"></a>-->
+            <div class="card">
+              <p style="background-color: #ffcc88;  font-size: 30px;">&nbsp;</p>
+              <img src="{% static "img/teacher02.jpg" %}" alt="馮蕙嫻教授" style="width:67%;height:300px;object-fit:cover">
+              <p><h1>馮蕙嫻</h1></p>
+              <p class="title">國立高雄科技大學 <br>助理教授</p>
+              <p><b>主要經歷</b></p>
+              <p>國立高雄科技大學應用英語系 <br>助理教授<p>
+                <p>國立高雄第一科技大學語言教學中心<br>專案助理教授</p>
+                <p>美國愛荷華州立大學博士<br>後研究員</p>
+                <p style="background-color: #ffcc88;  font-size: 30px;">&nbsp;</p>
+            </div>
+          </div>
+
+          <div class="col-sm-5 col-md-3">
+            <!--<a href="#"><img src="img/img-teacher-2.png" class="img-responsive" alt="Image"></a>-->
+            <div class="card">
+              <p style="background-color: #ffcc88;  font-size: 30px;">&nbsp;</p>
+              <img src="{% static "img/teacher03.jpg" %}" alt="阮家慶教授" style="width:67%;height:300px;object-fit:cover">
+              <p><h1>阮家慶</h1></p>
+              <p class="title">國立彰化 師範大學英語系<br>專案助理教授</p>
+              <p><b>主要經歷</b></p>
+              <p>國立高雄科技大學應用英語系<br>兼任助理教授<p>
+              <p>國立高雄科技大學語言教學中心<br>兼任助理教授</p>
+              <p>南華大學語文教學中心<br>兼任助理教授</p>
+              <p style="background-color: #ffcc88;  font-size: 30px;">&nbsp;</p>
+            </div>
+          </div>
+
+          <div class="col-sm-5 col-md-3">
+            <!--<a href="#"><img src="img/img-teacher-2.png" class="img-responsive" alt="Image"></a>-->
+            <div class="card">
+              <p style="background-color: #ffcc88;  font-size: 30px;">&nbsp;</p>
+              <img src="{% static "img/teacher04.jpg" %}" alt="李俊宏教授" style="width:67%;height:300px;object-fit:cover">
+              <p><h1>李俊宏</h1></p>
+              <p class="title">國立高雄科技大學 <br>教授</p>
+              <p><b>主要經歷</b></p>
+              <p>國立高雄科技大學電機工程系 <br>教授兼電機與資訊學院副院長<p>
+              <p>國立高雄應用科技大學電機工程系 <br>副教授</p>
+              <p>中央研究院資訊科學研究所 <br>訪問學者</p>
+              
+              <p style="background-color: #ffcc88;  font-size: 30px;">&nbsp;</p>
+            </div>
+          </div>
+            <!-- /.col-sm-6 -->
+
+            
         </div>
+            
+          
+        
       </div>
     </section>
 
 
         <!--學生作品-->
-         <section id="section-works" class="section-wrapper about-event">
+        <section id="section-works" class="section-wrapper about-event">
           <div class="container" style="font-family: 微軟正黑體;">
             <div class="row">
               <div class="col-md-12">
@@ -1023,12 +1039,43 @@
                 
                 <div class="tab-content">
                   <div id="m1-home2" class="tab-pane fade in active">
-                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7hjwkpubdc" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                    <iframe width="942" height="530" src="https://www.youtube.com/embed/kUyD8B0LSbI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <section aria-label="Newest Photos">
+                      <div class="carousel" data-carousel>
+                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                        <ul data-slides>
+                          <li class="slide" data-active>
+                            <iframe width="100%" height="600" src="https://www.youtube.com/embed/kUyD8B0LSbI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </li>
+                          <li class="slide">
+                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7hjwkpubdc" width="100%" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </section>
+                      {% comment %} <iframe width="100%" height="500px" src="https://www.youtube.com/embed/kUyD8B0LSbI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+
+                        {% comment %} <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7hjwkpubdc" width="100%" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe> {% endcomment %}
+                      
+                  
                   </div>
                   <div id="m1-1" class="tab-pane fade">
-                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7xjlzxde47" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                    <iframe width="942" height="530" src="https://www.youtube.com/embed/saS1-tTxYPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <section aria-label="Newest Photos">
+                      <div class="carousel" data-carousel>
+                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                        <ul data-slides>
+                          <li class="slide" data-active>
+                            <iframe width="100%" height="600" src="https://www.youtube.com/embed/saS1-tTxYPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </li>
+                          <li class="slide">
+                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7xjlzxde47" width="100%" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </section>
                   </div>
                 </div>
               </div>
@@ -1041,14 +1088,38 @@
                 
                 <div class="tab-content">
                   <div id="m2-home2" class="tab-pane fade in active">
-                    
-                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=19s7qqspma" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                    <iframe width="942" height="530" src="https://www.youtube.com/embed/DZ7_o4hwmpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <section aria-label="Newest Photos">
+                      <div class="carousel" data-carousel>
+                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                        <ul data-slides>
+                          <li class="slide" data-active>
+                            <iframe width="100%" height="600" src="https://www.youtube.com/embed/DZ7_o4hwmpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </li>
+                          <li class="slide">
+                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=19s7qqspma" width="100%" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </section>
                   </div>
                   <div id="m2-1" class="tab-pane fade">
-                    
-                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=zc5euct6rh" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                    <iframe width="942" height="530" src="https://www.youtube.com/embed/MpSpii_Y3_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <section aria-label="Newest Photos">
+                      <div class="carousel" data-carousel>
+                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                        <ul data-slides>
+                          <li class="slide" data-active>
+                            <iframe width="100%" height="600" src="https://www.youtube.com/embed/MpSpii_Y3_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </li>
+                          <li class="slide">
+                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=zc5euct6rh" width="100%" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </section>
                   </div>
                 </div>
               </div>
@@ -1061,15 +1132,27 @@
                 
                 <div class="tab-content">
                   <div id="m2-home2" class="tab-pane fade in active">
-                    <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=xplwpnco7k" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                    <iframe width="942" height="530" src="https://www.youtube.com/embed/MrKxnTqEY1M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <section aria-label="Newest Photos">
+                      <div class="carousel" data-carousel>
+                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
+                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
+                        <ul data-slides>
+                          <li class="slide" data-active>
+                            <iframe width="100%" height="600" src="https://www.youtube.com/embed/MrKxnTqEY1M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </li>
+                          <li class="slide">
+                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=xplwpnco7k" width="100%" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                          </li>
+                          
+                        </ul>
+                      </div>
+                    </section>
                   </div>
                 </div>
               </div>
             </div>
               <!-- /.container -->
         </section>
-
 
 
             <!--照片區-->
@@ -1088,7 +1171,7 @@
                     {%for p in pictures%}
                     <div class="mySlides">
                       <div class="numbertext">1 / {{forloop.counter}}</div>
-                      <img src="{{p.image}}" style="width:100%;height:600px;object-fit: cover;" >
+                      <img src="{{p.image}}" style="width:100%;height:600px;object-fit: contain;" >
                     </div>
                     {%endfor%}
 
@@ -1172,6 +1255,8 @@
       <!--<script src="js/one-page-nav.js"></script>-->
       <!-- <script src="static/js/scripts.js"></script> -->
       <script src="{% static 'js/scripts.js' %}"></script>
+      <script src="{% static 'js/Carousel.js' %}"></script>
+
         <!--accordion ver.2-->
         <script>
       $( function() {

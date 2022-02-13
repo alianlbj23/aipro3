@@ -17,4 +17,8 @@ class Book(models.Model):
 class picture(models.Model):
     image = models.CharField(max_length=200)
     information = models.CharField(max_length=200)
+    rank = models.IntegerField()
+    class Meta:
+        ordering = ["rank"]
+    
 # Create your models here.
