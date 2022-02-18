@@ -23,6 +23,7 @@
   <!--<link href="static/css/style.css" rel="stylesheet">-->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/Carousel1.css' %}">
+  <link rel="stylesheet" href="{% static 'css/navTab_studnet.css' %}"><!--學生作品-->
   <!--new-->
   <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -1021,141 +1022,108 @@
                 </div>
               </div>
             </div>
-            <ul class="nav nav-tabs">
-              {% comment %} <li class="active"><a data-toggle="tab" href="#home">Home</a></li> {% endcomment %}
-              <li class="active"><a data-toggle="tab" href="#m1">第一組</a></li>
-              <li><a data-toggle="tab" href="#m2">第六組</a></li>
-              <li><a data-toggle="tab" href="#m3">第七組</a></li>
+
+            <ul class="nav nav-tabs" style=" display: flex;justify-content: center; justify-content: center; ">
+              <li class="active"><a data-toggle="tab" href="#midtern">期中</a></li>
+              <li><a data-toggle="tab" href="#final">期末</a></li>
             </ul>
           
             <div class="tab-content">
-              {% comment %} <div id="home" class="tab-pane fade in active">
-                <h3>HOME</h3>
-                <p>sad</p>
-              </div> {% endcomment %}
-
-              <div id="m1" class="tab-pane fade in active">
-                <ul class="nav nav-pills">
-                  <li class="active"><a data-toggle="pill" href="#m1-home2">期中</a></li>
-                  <li><a data-toggle="pill" href="#m1-1">期末</a></li>
+              <div id="midtern" class="tab-pane fade in active">
+                <ul class="nav nav-tabs" style=" display: flex;justify-content: center; justify-content: center; ">
+                  <li class="active"><a data-toggle="tab" href="#midtern-1">簡愛</a></li>
+                  <li><a data-toggle="tab" href="#midtern-2">福爾摩斯冒險史</a></li>
                 </ul>
-                
                 <div class="tab-content">
-                  <div id="m1-home2" class="tab-pane fade in active">
-                    <section aria-label="Newest Photos">
-                      <div class="carousel" data-carousel>
-                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
-                        <ul data-slides>
-                          <li class="slide" data-active>
-                            
-                            <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/kUyD8B0LSbI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            
-                          </li>
-                          <li class="slide">
-                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7hjwkpubdc" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                          </li>
-                          
-                        </ul>
-                      </div>
-                    </section>
-                      {% comment %} <iframe width="100%" height="500px" src="https://www.youtube.com/embed/kUyD8B0LSbI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> {% endcomment %}
+                  <div id="midtern-1" class="tab-pane fade in active">
+                    <ul class="nav nav-tabs" style=" display: flex;justify-content: center; justify-content: center; ">
+                      <li class="active"><a data-toggle="tab" href="#midtern-vedio">介紹影片</a></li>
+                      <li><a data-toggle="tab" href="#midtern-ppt">簡報</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="midtern-vedio" class="tab-pane fade in active">
+                        <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/kUyD8B0LSbI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                        {% comment %} <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7hjwkpubdc" width="100%" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe> {% endcomment %}
-                      
-                  
-                  </div>
-                  <div id="m1-1" class="tab-pane fade">
-                    <section aria-label="Newest Photos">
-                      <div class="carousel" data-carousel>
-                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
-                        <ul data-slides>
-                          <li class="slide" data-active>
-                            <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/saS1-tTxYPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          </li>
-                          <li class="slide">
-                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7xjlzxde47" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                          </li>
-                          
-                        </ul>
                       </div>
-                    </section>
+                      <div id="midtern-ppt" class="tab-pane fade">
+                        <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7hjwkpubdc" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="midtern-2" class="tab-pane fade">
+                    <ul class="nav nav-tabs" style=" display: flex;justify-content: center; justify-content: center; ">
+                      <li class="active"><a data-toggle="tab" href="#midtern2-vedio">介紹影片</a></li>
+                      <li><a data-toggle="tab" href="#midtern2-ppt">簡報</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="midtern2-vedio" class="tab-pane fade in active">
+                        <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/DZ7_o4hwmpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                      </div>
+                      <div id="midtern2-ppt" class="tab-pane fade">
+                        <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=19s7qqspma" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div id="m2" class="tab-pane fade">
-                <ul class="nav nav-pills">
-                  <li class="active"><a data-toggle="pill" href="#m2-home2">期中</a></li>
-                  <li><a data-toggle="pill" href="#m2-1">期末</a></li>
+              <div id="final" class="tab-pane fade">
+                <ul class="nav nav-tabs" style=" display: flex;justify-content: center; justify-content: center; ">
+                  <li class="active"><a data-toggle="tab" href="#final-1">為愛重生</a></li>
+                  <li><a data-toggle="tab" href="#final-2">福爾摩斯冒險史</a></li>
+                  <li><a data-toggle="tab" href="#final-3">尼克亞當斯故事集</a></li>
                 </ul>
-                
                 <div class="tab-content">
-                  <div id="m2-home2" class="tab-pane fade in active">
-                    <section aria-label="Newest Photos">
-                      <div class="carousel" data-carousel>
-                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
-                        <ul data-slides>
-                          <li class="slide" data-active>
-                            <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/DZ7_o4hwmpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          </li>
-                          <li class="slide">
-                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=19s7qqspma" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                          </li>
-                          
-                        </ul>
+                  <div id="final-1" class="tab-pane fade in active">
+                    <ul class="nav nav-tabs" style=" display: flex;justify-content: center; justify-content: center; ">
+                      <li class="active"><a data-toggle="tab" href="#final1-1-vedio">介紹影片</a></li>
+                      <li><a data-toggle="tab" href="#final1-1-ppt">簡報</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="final1-1-vedio" class="tab-pane fade in active">
+                        <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/saS1-tTxYPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                       </div>
-                    </section>
+                      <div id="final1-1-ppt" class="tab-pane fade">
+                        <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7xjlzxde47" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                      </div>
+                    </div>
                   </div>
-                  <div id="m2-1" class="tab-pane fade">
-                    <section aria-label="Newest Photos">
-                      <div class="carousel" data-carousel>
-                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
-                        <ul data-slides>
-                          <li class="slide" data-active>
-                            <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/MpSpii_Y3_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          </li>
-                          <li class="slide">
-                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=zc5euct6rh" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                          </li>
-                          
-                        </ul>
+                  <div id="final-2" class="tab-pane fade">
+                    <ul class="nav nav-tabs" style=" display: flex;justify-content: center; justify-content: center; ">
+                      <li class="active"><a data-toggle="tab" href="#final1-2-vedio">介紹影片</a></li>
+                      <li><a data-toggle="tab" href="#final1-2-ppt">簡報</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="final1-2-vedio" class="tab-pane fade in active">
+                        <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/MpSpii_Y3_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
                       </div>
-                    </section>
+                      <div id="final1-2-ppt" class="tab-pane fade">
+                        <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=zc5euct6rh" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="final-3" class="tab-pane fade">
+                    <ul class="nav nav-tabs" style=" display: flex;justify-content: center; justify-content: center; ">
+                      <li class="active"><a data-toggle="tab" href="#final1-3-vedio">介紹影片</a></li>
+                      <li><a data-toggle="tab" href="#final1-3-ppt">簡報</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="final1-3-vedio" class="tab-pane fade in active">
+                        <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/MrKxnTqEY1M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                      </div>
+                      <div id="final1-3-ppt" class="tab-pane fade">
+                        <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=xplwpnco7k" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              <div id="m3" class="tab-pane fade">
-                <ul class="nav nav-pills">
-                  <li class="active"><a data-toggle="pill" href="#m2-home2">期末</a></li>
-                  
-                </ul>
-                
-                <div class="tab-content">
-                  <div id="m2-home2" class="tab-pane fade in active">
-                    <section aria-label="Newest Photos">
-                      <div class="carousel" data-carousel>
-                        <button class="carousel-button prev" data-carousel-button="prev">&#8656;</button>
-                        <button class="carousel-button next" data-carousel-button="next">&#8658;</button>
-                        <ul data-slides>
-                          <li class="slide" data-active>
-                            <iframe width="{{student_width}}" height="600" src="https://www.youtube.com/embed/MrKxnTqEY1M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                          </li>
-                          <li class="slide">
-                            <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=xplwpnco7k" width="{{student_width}}" height="600" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
-                          </li>
-                          
-                        </ul>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </div>
+              
             </div>
+            
               <!-- /.container -->
         </section>
 
@@ -1261,14 +1229,15 @@
       <!-- <script src="static/js/scripts.js"></script> -->
       <script src="{% static 'js/scripts.js' %}"></script>
       <script src="{% static 'js/Carousel.js' %}"></script>
-
+      <script src="{% static 'js/navTab_student.js' %}"></script>
         <!--accordion ver.2-->
         <script>
       $( function() {
         $( "#tab" ).accordion();
       } );
-       </script>
-
+        </script>
+      
+      
 
       <!--參考網站-手風琴-->
       <script>
