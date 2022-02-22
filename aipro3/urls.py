@@ -22,7 +22,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    
+    path('tool/', views.tool, name='tool'),
+    path('tool2/', views.tool2, name='tool2'),
     #因被亂上傳檔案，上傳功能暫時註解
 ]
 

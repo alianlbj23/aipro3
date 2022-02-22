@@ -12,3 +12,16 @@ def home(request):
     #teacher_width = '100%'
     return render(request, 'index.html', locals())
 
+
+def tool(request):
+    pictures = picture.objects.all()
+    student_width = '95.7%'
+    #teacher_width = '100%'
+    return render(request, 'tool.html', locals())
+
+def tool2(request):
+    pictures = picture.objects.all()
+    student_width = '95.7%'
+    #teacher_width = '100%'
+    return render(request, 'tool2.html', locals())
+
