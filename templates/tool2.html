@@ -28,17 +28,10 @@
 </head>
 <body style="background-color:#F2F2F2">
 <div class="all">
-    <div class="menu">
-        <div class="list">
-            <h1 style="margin-bottom:20%">文本分析工具說明</h1>
-            <p style="color:#696969">分析工具</p>
-            <a href="/tool" class="test"><span><b>語料庫文本分析網站</b></span><br></a>
-            <a href="/tool2" id="a"><span><b>文本探勘網站</b></span></a>
-        </div>
-    </div>
+    {% include "side_head.html" %}
     <div class="content">
         <div class="container">
-            <h1 style="margin-bottom:3%">文本探勘網站<br>Text Mining Website</h1>
+            <h2 style="margin-bottom:3%">文本探勘網站<br>Text Mining Website</h2>
             <p>本網站允許使用者上傳文字檔（請參照網站說明PPT），並透過網站的「文本探勘」分析以得到可視化的結果。
             <br>本網站提供以下六種「文本探勘」的可視化分析：</p>
             <ul>
@@ -50,11 +43,14 @@
                 <li>情緒分析 (Emotions Analysis) 😃</li>
             </ul>
             <br><br>
-            <h1 style="margin-bottom:3%">網站說明PPT</h1>
+            <h2 style="margin-bottom:3%">網站說明PPT</h2>
             
             <iframe src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=7xps717y6z" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen></iframe>
+            <br><br>
+            <h2 style="margin-bottom:3%">使用網站</h2>
             <ul>
                 <li><a id="a" href="http://aipro.nkust.org:8051/">網站連接</a></li>
+                <li><a id="a" href="/zip_download/老人與海/">檔案下載</a></li>
             </ul>
         </div>
     </div>

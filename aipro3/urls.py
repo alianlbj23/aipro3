@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('tool/', views.tool, name='tool'),
     path('tool2/', views.tool2, name='tool2'),
+    path('zip_download/<str:file_name>/', views.zip_download),
     #因被亂上傳檔案，上傳功能暫時註解
 ]
 

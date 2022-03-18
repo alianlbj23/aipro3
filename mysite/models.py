@@ -20,5 +20,10 @@ class picture(models.Model):
     rank = models.IntegerField()
     class Meta:
         ordering = ["rank"]
-    
+
+class ZipFile(models.Model):
+    packeage_name = models.CharField(max_length=100)
+    zip_file = models.FileField()
+    def __str__(self):
+        return str(self.packeage_name)
 # Create your models here.

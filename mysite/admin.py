@@ -4,3 +4,7 @@ from mysite.models import *
 class pictureAdmin(admin.ModelAdmin):
     list_display = ['image']
 admin.site.register(picture, pictureAdmin)
+
+class ZipFileAdmin(admin.ModelAdmin):
+    list_display = ['packeage_name','zip_file']
+admin.site.register(ZipFile, ZipFileAdmin)
