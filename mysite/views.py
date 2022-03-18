@@ -39,7 +39,7 @@ def tool2(request):
     return render(request, 'tool2.html', locals())
 
 def zip_download(request, file_name):
-    file_path='static1/zip_file/'+str(file_name)+'.zip'
+    file_path='/var/www/aipro3/aipro3/static1/zip_file/'+str(file_name)+'.zip'
     response = FileResponse(open(file_path, 'rb'))
     response['Content-Type'] = 'application/octet-stream'
     fileName = file_name
